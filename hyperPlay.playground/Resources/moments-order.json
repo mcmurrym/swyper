@@ -1,0 +1,76 @@
+{
+    "id": "16932479",
+    "href": "/orders/16932479",
+    "ts": 1397775608.345614,
+    "live": false,
+    "app": "app_example",
+    "customer": {
+        "id" : "cust_eba1c1b575ce10db",
+        "href" : "/customers/cust_eba1c1b575ce10db"
+    },
+    "moment": {
+        "id": "some-moment",
+        "href": "/moments/some-moment"
+    },
+    "invoice": {
+        "id": "inv_3d2796bb8517",
+        "href": "/invoices/inv_3d2796bb8517"
+    },
+    "paid": false,
+    "shipped": true,
+    "closed": false,
+    "personalization": {
+        "name": "Jason Anderson",
+        "month": "June 2014",
+        "distance": "6.4 mi",
+        "pace": "10:16/mi",
+        "rank": "17,123 / 40,569"
+    },
+    "shipping_address": {
+        "name": "Jason Anderson",
+        "address1": "1234 Awesome St",
+        "zip": "90210",
+        "city": "Hollywood",
+        "state": "California",
+        "country": "US"
+    },
+    "metadata": {
+        "customer": 123699,
+        "campaign": "email-blast-52"
+    },
+    "cancel": {
+        "action": "/orders/16932479",
+        "method": "POST",
+        "input": {
+            "thingy": {
+                "type": "hidden",
+                "value": "cancel"
+            },
+            "reason": {
+                "type": "text",
+                "required": false
+            }
+        }
+    },
+    "close": {
+        "action": "/orders/16932479",
+        "method": "POST",
+        "input": {
+            "thingy": {
+                "type": "hidden",
+                "value": "close"
+            }
+        }
+    },
+    "update": {
+        "action": "/orders/16932479",
+        "method": "PUT",
+        "input": {
+            "metadata": {
+                "type": "application/json",
+                "maxlength": 1000,
+                "required": false
+            }
+        }
+    }
+}

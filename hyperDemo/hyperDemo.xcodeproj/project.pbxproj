@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0058AE319FAF1BA002A539E /* Hyper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0058AE219FAF1BA002A539E /* Hyper.framework */; };
 		BEB5ECC319F9B63600307C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5ECC219F9B63600307C22 /* AppDelegate.swift */; };
 		BEB5ECC519F9B63600307C22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5ECC419F9B63600307C22 /* ViewController.swift */; };
 		BEB5ECC819F9B63600307C22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB5ECC619F9B63600307C22 /* Main.storyboard */; };
 		BEB5ECCA19F9B63600307C22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB5ECC919F9B63600307C22 /* Images.xcassets */; };
 		BEB5ECCD19F9B63600307C22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB5ECCB19F9B63600307C22 /* LaunchScreen.xib */; };
 		BEB5ECD919F9B63600307C22 /* hyperDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5ECD819F9B63600307C22 /* hyperDemoTests.swift */; };
-		BEB5ECEA19F9BAB800307C22 /* hyper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB5ECE919F9BAB800307C22 /* hyper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0058AE219FAF1BA002A539E /* Hyper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hyper.framework; path = "../Hyper/build/Debug-iphoneos/Hyper.framework"; sourceTree = "<group>"; };
+		B0E6E1B719FADC5D000468BD /* hyperPlay.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = hyperPlay.playground; path = ../hyperPlay.playground; sourceTree = "<group>"; };
 		BEB5ECBD19F9B63600307C22 /* hyperDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hyperDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB5ECC119F9B63600307C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB5ECC219F9B63600307C22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +40,6 @@
 		BEB5ECD719F9B63600307C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB5ECD819F9B63600307C22 /* hyperDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hyperDemoTests.swift; sourceTree = "<group>"; };
 		BEB5ECE519F9B98200307C22 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Swyper-dbjeedtcolqjjmcxgzvsidjjjnqe/Build/Products/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		BEB5ECE919F9BAB800307C22 /* hyper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = hyper.framework; path = "../../../Library/Developer/Xcode/DerivedData/Swyper-dbjeedtcolqjjmcxgzvsidjjjnqe/Build/Products/Debug-iphoneos/hyper.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEB5ECEA19F9BAB800307C22 /* hyper.framework in Frameworks */,
+				B0058AE319FAF1BA002A539E /* Hyper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,10 +64,11 @@
 		BEB5ECB419F9B63600307C22 = {
 			isa = PBXGroup;
 			children = (
-				BEB5ECE919F9BAB800307C22 /* hyper.framework */,
+				B0058AE219FAF1BA002A539E /* Hyper.framework */,
 				BEB5ECBF19F9B63600307C22 /* hyperDemo */,
 				BEB5ECD519F9B63600307C22 /* hyperDemoTests */,
 				BEB5ECBE19F9B63600307C22 /* Products */,
+				B0E6E1B719FADC5D000468BD /* hyperPlay.playground */,
 			);
 			sourceTree = "<group>";
 		};
@@ -355,6 +357,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Swyper-dbjeedtcolqjjmcxgzvsidjjjnqe/Build/Products/Debug-iphoneos",
+					"/Users/timshadel/code/octanner/swyper/Hyper/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = hyperDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -369,6 +372,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Swyper-dbjeedtcolqjjmcxgzvsidjjjnqe/Build/Products/Debug-iphoneos",
+					"/Users/timshadel/code/octanner/swyper/Hyper/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = hyperDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

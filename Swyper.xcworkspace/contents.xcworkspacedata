@@ -10,7 +10,4 @@
    <FileRef
       location = "group:SwiftyJSON/SwiftyJSON.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:hyperPlay.playground">
-   </FileRef>
 </Workspace>

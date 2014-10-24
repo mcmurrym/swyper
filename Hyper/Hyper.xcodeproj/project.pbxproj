@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0E2471519FAE9B8009C0ADF /* Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E2471419FAE9B8009C0ADF /* Hyper.swift */; };
 		BEB5ECFB19F9BDED00307C22 /* Hyper.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB5ECFA19F9BDED00307C22 /* Hyper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEB5ED0119F9BDED00307C22 /* Hyper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB5ECF519F9BDED00307C22 /* Hyper.framework */; };
 		BEB5ED0819F9BDED00307C22 /* HyperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5ED0719F9BDED00307C22 /* HyperTests.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0E2471419FAE9B8009C0ADF /* Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hyper.swift; sourceTree = "<group>"; };
 		BEB5ECF519F9BDED00307C22 /* Hyper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hyper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB5ECF919F9BDED00307C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB5ECFA19F9BDED00307C22 /* Hyper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hyper.h; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				BEB5ECFA19F9BDED00307C22 /* Hyper.h */,
+				B0E2471419FAE9B8009C0ADF /* Hyper.swift */,
 				BEB5ECF819F9BDED00307C22 /* Supporting Files */,
 			);
 			path = Hyper;
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E2471519FAE9B8009C0ADF /* Hyper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +327,7 @@
 		BEB5ED0C19F9BDED00307C22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -336,12 +341,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		BEB5ED0D19F9BDED00307C22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
