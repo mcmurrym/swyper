@@ -3,9 +3,9 @@
 import UIKit
 import SwiftyJSON
 
-let j = JSON(object: [])
+let j = JSON([])
 
-if let this = j["hello"].stringValue {
+if let this = j["hello"].string {
     
 }
 
