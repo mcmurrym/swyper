@@ -11,7 +11,6 @@ XCPSetExecutionShouldContinueIndefinitely()
 let path = NSBundle.mainBundle().pathForResource("moments-order", ofType: "json")
 let jsonData = NSData(contentsOfFile: path!)
 
-
 if let data = jsonData {
 
     let j = HyperObject(JSON(data: data))
@@ -28,9 +27,10 @@ if let data = jsonData {
     println(jsonData)
 }
 
-Alamofire.request(.GET, "http://www.welbe.com").response { (request, response, data, error) -> Void in
-    let this = "hello"
+Alamofire.request(.GET, "http://private-4bbf0-hyperexperimental.apiary-mock.com/api").responseSwiftyJSON { (req, resp, data, error) -> Void in
+    println(data)
 }
+
 
 //let result: AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData!, options: nil, error: nil)
 
