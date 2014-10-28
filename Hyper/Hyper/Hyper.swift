@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import Alamofire
 
 public class HyperNode {
     
@@ -41,6 +42,18 @@ public class HyperObject : HyperNode {
 
     public override func action(name: String) -> HyperAction? {
         return super.action(name)
+    }
+}
+
+
+extension HyperObject {
+    
+    public class func rootObject(href: String) -> HyperObject {
+        let json = JSON(["href" : href])
+        
+        let hyperRoot = HyperObject(json)
+        
+        return hyperRoot
     }
 }
 
