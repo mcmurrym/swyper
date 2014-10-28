@@ -3,6 +3,10 @@
 import UIKit
 import SwiftyJSON
 import Hyper
+import AlamoFire
+import XCPlayground
+
+XCPSetExecutionShouldContinueIndefinitely()
 
 let path = NSBundle.mainBundle().pathForResource("moments-order", ofType: "json")
 let jsonData = NSData(contentsOfFile: path!)
@@ -24,6 +28,9 @@ if let data = jsonData {
     println(jsonData)
 }
 
+Alamofire.request(.GET, "http://www.welbe.com").response { (request, response, data, error) -> Void in
+    let this = "hello"
+}
 
 //let result: AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData!, options: nil, error: nil)
 

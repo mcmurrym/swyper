@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B0E2471519FAE9B8009C0ADF /* Hyper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E2471419FAE9B8009C0ADF /* Hyper.swift */; };
+		BE8EF0F31A001CEF00C73E51 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8EF0F21A001CEF00C73E51 /* Alamofire.framework */; };
 		BEB5ECFB19F9BDED00307C22 /* Hyper.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB5ECFA19F9BDED00307C22 /* Hyper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEB5ED0119F9BDED00307C22 /* Hyper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB5ECF519F9BDED00307C22 /* Hyper.framework */; };
 		BEB5ED0819F9BDED00307C22 /* HyperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5ED0719F9BDED00307C22 /* HyperTests.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		B0E2471419FAE9B8009C0ADF /* Hyper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hyper.swift; sourceTree = "<group>"; };
+		BE8EF0F21A001CEF00C73E51 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		BEB5ECF519F9BDED00307C22 /* Hyper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hyper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB5ECF919F9BDED00307C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB5ECFA19F9BDED00307C22 /* Hyper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hyper.h; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8EF0F31A001CEF00C73E51 /* Alamofire.framework in Frameworks */,
 				BEB5ED1219F9BE0400307C22 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +61,7 @@
 		BEB5ECEB19F9BDED00307C22 = {
 			isa = PBXGroup;
 			children = (
+				BE8EF0F21A001CEF00C73E51 /* Alamofire.framework */,
 				BEB5ED1119F9BE0400307C22 /* SwiftyJSON.framework */,
 				BEB5ECF719F9BDED00307C22 /* Hyper */,
 				BEB5ED0419F9BDED00307C22 /* HyperTests */,
@@ -335,6 +339,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Swyper-dbjeedtcolqjjmcxgzvsidjjjnqe/Build/Products/Debug-iphoneos",
+					"/Users/matt.mcmurry/Development/Swyper/Alamofire/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = Hyper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -356,6 +361,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Swyper-dbjeedtcolqjjmcxgzvsidjjjnqe/Build/Products/Debug-iphoneos",
+					"/Users/matt.mcmurry/Development/Swyper/Alamofire/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = Hyper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
