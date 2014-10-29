@@ -73,7 +73,7 @@ public class HyperObject : HyperNode {
     public convenience init (baseURLString aBaseURLString: String, rootPath aRootPath: String) {
         
         let session = HyperSession(aBaseURLString)
-        let json = JSON(["href" : session.urlFromRelativeURL(aRootPath)])
+        let json = JSON(["href" : aRootPath])
         self.init(json)
 
         self.session = session
