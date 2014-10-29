@@ -10,57 +10,6 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-public class HyperNode {
-    
-    var json: JSON
-
-    public init(_ json: JSON) {
-        self.json = json
-    }
-
-    public func action(name: String) -> HyperAction? {
-        let actionJSON = self.json[name]
-        if let actionHref = actionJSON["action"].string {
-            return HyperAction(actionJSON)
-        }
-        return nil
-    }
-    
-}
-
-
-public class HyperObject : HyperNode {
-
-    var session: HyperSession?
-    
-    public func open() -> HyperObject? {
-        if let href = self.json["href"].string {
-            Alamofire.request(.GET, href).responseSwiftyJSON { (req, resp, data, error) -> Void in
-                self.json = data
-                println(data)
-            }
-            return self
-        } else {
-            return nil
-        }
-    }
-
-    public convenience init (baseURLString aBaseURLString: String, rootPath aRootPath: String) {
-        
-        let session = HyperSession(aBaseURLString)
-        
-        let json = JSON(["href" : session.urlFromRelativeURL(aRootPath)])
-    println(json)
-        self.init(json)
-
-        self.session = session
-    }
-    
-    public override func action(name: String) -> HyperAction? {
-        return super.action(name)
-    }
-}
-
 class HyperSession {
     private let baseURL: NSURL
     let manager: Manager
@@ -83,6 +32,58 @@ class HyperSession {
         }
     }
 }
+
+public class HyperNode {
+    
+    var json: JSON
+
+    public init(_ json: JSON) {
+        self.json = json
+    }
+
+    public func action(name: String) -> HyperAction? {
+        let actionJSON = self.json[name]
+        if let actionHref = actionJSON["action"].string {
+            return HyperAction(actionJSON)
+        }
+        return nil
+    }
+}
+
+
+public class HyperObject : HyperNode {
+
+    var session: HyperSession?
+    
+    public func open() -> HyperObject? {
+        if let href = self.json["href"].string {
+            if let aSession = session {
+                let urlString = aSession.urlFromRelativeURL(href)
+                aSession.manager.request(.GET, urlString).responseSwiftyJSON { (req, resp, data, error) -> Void in
+                    self.json = data
+                    println(data)
+                }
+            }
+            return self
+        } else {
+            return nil
+        }
+    }
+
+    public convenience init (baseURLString aBaseURLString: String, rootPath aRootPath: String) {
+        
+        let session = HyperSession(aBaseURLString)
+        let json = JSON(["href" : session.urlFromRelativeURL(aRootPath)])
+        self.init(json)
+
+        self.session = session
+    }
+    
+    public override func action(name: String) -> HyperAction? {
+        return super.action(name)
+    }
+}
+
 
 public class HyperAction : HyperNode {
     

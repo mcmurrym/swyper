@@ -27,9 +27,15 @@ if let data = jsonData {
     println(jsonData)
 }
 
+let jTest = JSON(1)
+let jTest2 = JSON(true)
+let jTest3 = JSON("hello")
+let jTest4 = JSON(["boom"])
+let jTest5 = JSON(NSDate())
+
 let root = HyperObject(baseURLString: "http://private-4bbf0-hyperexperimental.apiary-mock.com/", rootPath: "api")
 
-//root.open().
+root.open()
 
 
 //let result: AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData!, options: nil, error: nil)
