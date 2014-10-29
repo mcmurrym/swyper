@@ -12,7 +12,7 @@ import Alamofire
 
 public class HyperNode {
     
-    let json: JSON
+    var json: JSON
 
     public init(_ json: JSON) {
         self.json = json
@@ -25,38 +25,64 @@ public class HyperNode {
         }
         return nil
     }
-
+    
 }
 
 
 public class HyperObject : HyperNode {
 
+    var session: HyperSession?
+    
     public func open() -> HyperObject? {
         if let href = self.json["href"].string {
-            println("Wish I could download the full object...")
+            Alamofire.request(.GET, href).responseSwiftyJSON { (req, resp, data, error) -> Void in
+                self.json = data
+                println(data)
+            }
             return self
         } else {
             return nil
         }
     }
 
+    public convenience init (baseURLString aBaseURLString: String, rootPath aRootPath: String) {
+        
+        let session = HyperSession(aBaseURLString)
+        
+        let json = JSON(["href" : session.urlFromRelativeURL(aRootPath)])
+    println(json)
+        self.init(json)
+
+        self.session = session
+    }
+    
     public override func action(name: String) -> HyperAction? {
         return super.action(name)
     }
 }
 
-
-extension HyperObject {
+class HyperSession {
+    private let baseURL: NSURL
+    let manager: Manager
+    init(_ baseURL: String) {
+        self.baseURL = NSURL(string: baseURL)!
+        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        self.manager = Alamofire.Manager(configuration: sessionConfig)
+    }
     
-    public class func rootObject(href: String) -> HyperObject {
-        let json = JSON(["href" : href])
+    func urlFromRelativeURL(string: String) -> String {
         
-        let hyperRoot = HyperObject(json)
-        
-        return hyperRoot
+        if let url = NSURL(string: string, relativeToURL: self.baseURL) {
+            if let stringURL = url.absoluteString {
+                return stringURL
+            } else {
+                return ""
+            }
+        } else {
+            return ""
+        }
     }
 }
-
 
 public class HyperAction : HyperNode {
     

@@ -27,9 +27,9 @@ if let data = jsonData {
     println(jsonData)
 }
 
-Alamofire.request(.GET, "http://private-4bbf0-hyperexperimental.apiary-mock.com/api").responseSwiftyJSON { (req, resp, data, error) -> Void in
-    println(data)
-}
+let root = HyperObject(baseURLString: "http://private-4bbf0-hyperexperimental.apiary-mock.com/", rootPath: "api")
+
+//root.open().
 
 
 //let result: AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData!, options: nil, error: nil)
