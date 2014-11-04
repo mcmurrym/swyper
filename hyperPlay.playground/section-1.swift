@@ -8,6 +8,15 @@ import XCPlayground
 
 XCPSetExecutionShouldContinueIndefinitely()
 
+func delay(delay:Double, closure:()->()) {
+    dispatch_after(
+        dispatch_time(
+            DISPATCH_TIME_NOW,
+            Int64(delay * Double(NSEC_PER_SEC))
+        ),
+        dispatch_get_main_queue(), closure)
+}
+
 let path = NSBundle.mainBundle().pathForResource("moments-order", ofType: "json")
 let jsonData = NSData(contentsOfFile: path!)
 
@@ -35,7 +44,15 @@ let jTest5 = JSON(NSDate())
 
 let root = HyperObject(baseURLString: "http://private-4bbf0-hyperexperimental.apiary-mock.com/", rootPath: "api")
 
-root.open()
+
+//root.open { (hyperObject) -> () in
+//    println("got it")
+//}
+
+root.open("current_user", attributesNeeded: ["display_name"]) { (current_user) -> () in
+    println(current_user)
+}
+
 
 
 //let result: AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData!, options: nil, error: nil)
