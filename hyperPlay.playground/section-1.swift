@@ -42,16 +42,31 @@ let jTest3 = JSON("hello")
 let jTest4 = JSON(["boom"])
 let jTest5 = JSON(NSDate())
 
-let root = HyperObject(baseURLString: "http://private-4bbf0-hyperexperimental.apiary-mock.com/", rootPath: "api")
+let rootLink = HyperObject(baseURLString: "http://private-4bbf0-hyperexperimental.apiary-mock.com/", rootPath: "api")
+//rootLink["name"]
 
 
 //root.open { (hyperObject) -> () in
 //    println("got it")
 //}
 
-root.open("current_user", attributesNeeded: ["display_name"]) { (current_user) -> () in
-    println(current_user)
-}
+//rootLink.open() { (root) -> () in
+//    let user = root.link("curretn_user")
+//    
+//    ui.navbar.user(user)
+//    db.save(user)
+//    ui.page(root)
+//    
+//}
+
+//rootLink.open("moment", attributesNeeded: ["id"]) { (current_user) -> () in
+//    println(current_user)
+//}
+
+
+//let label = UILabel()
+//
+//label.bind("moment.name")
 
 
 

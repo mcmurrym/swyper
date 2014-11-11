@@ -10,6 +10,69 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
+/**
+*  Eveything is a HyperNode
+*/
+public class HyperNode {
+    
+    var json: JSON
+
+    public init(_ json: JSON) {
+        self.json = json
+    }
+
+    public func action(name: String) -> HyperAction? {
+        let actionJSON = self.json[name]
+        if let actionHref = actionJSON["action"].string {
+            return HyperAction(actionJSON)
+        }
+        return nil
+    }
+}
+
+/**
+*  HyperDocument has a max of one element
+*/
+public class HyperDocument: HyperNode {
+    var element: HyperElement?
+}
+
+/**
+*  HyperElement is an object that is represents a JSON object that contains an href
+*/
+public class HyperElement: HyperNode {
+    var attributes: [HyperAttribute]?
+    var baseURI: String?
+    var childNodes: [HyperNode]?
+    var firstChild: HyperNode?
+    var lastChild: HyperNode?
+    var namespaceURI: String?
+    var nextSibling: HyperNode?
+    var nodeName: String?
+    let nodeType = "HyperElement"
+    var ownerDocument: HyperDocument?
+    var parentNode: HyperNode?
+    var previousSibling: HyperNode?
+    var tagName: String? //a, p, title, hr, b, br, head, html, text
+    var textContent: String? //(set and get)
+}
+
+/**
+*  HyperAttribute is an object that may or may not represent a JSON object that does not contain an href. 
+*  Perhaps this is not valid for non-xml enironments?
+*/
+public class HyperAttribute: HyperNode {
+    
+}
+
+/**
+*  HyperRequest handles the HTTP Requests
+*/
+public class HyperRequest: HyperNode {
+    
+}
+
+
 class HyperSession {
     private let baseURL: NSURL
     let manager: Manager
@@ -30,23 +93,6 @@ class HyperSession {
         } else {
             return ""
         }
-    }
-}
-
-public class HyperNode {
-    
-    var json: JSON
-
-    public init(_ json: JSON) {
-        self.json = json
-    }
-
-    public func action(name: String) -> HyperAction? {
-        let actionJSON = self.json[name]
-        if let actionHref = actionJSON["action"].string {
-            return HyperAction(actionJSON)
-        }
-        return nil
     }
 }
 
