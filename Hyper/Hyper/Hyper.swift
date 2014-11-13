@@ -15,6 +15,25 @@ import Alamofire
 */
 public class HyperNode {
     
+    var attributes: [HyperAttribute]?
+    var baseURI: String?
+    var childNodes: [HyperNode]?
+    var firstChild: HyperNode?
+    var lastChild: HyperNode?
+    var namespaceURI: String?
+    var nextSibling: HyperNode?
+    var nodeName: String?
+    var nodeType: String {
+        get {
+            return "HyperNode"
+        }
+    }
+    var ownerDocument: HyperDocument?
+    var parentNode: HyperNode?
+    var previousSibling: HyperNode?
+    var textContent: String? //(set and get)
+    
+    
     var json: JSON
 
     public init(_ json: JSON) {
@@ -34,27 +53,25 @@ public class HyperNode {
 *  HyperDocument has a max of one element
 */
 public class HyperDocument: HyperNode {
-    var element: HyperElement?
+    var documentElement: HyperElement?
+    override var nodeType: String {
+        get {
+            return "HyperDocument"
+        }
+    }
 }
 
 /**
 *  HyperElement is an object that is represents a JSON object that contains an href
 */
 public class HyperElement: HyperNode {
-    var attributes: [HyperAttribute]?
-    var baseURI: String?
-    var childNodes: [HyperNode]?
-    var firstChild: HyperNode?
-    var lastChild: HyperNode?
-    var namespaceURI: String?
-    var nextSibling: HyperNode?
-    var nodeName: String?
-    let nodeType = "HyperElement"
-    var ownerDocument: HyperDocument?
-    var parentNode: HyperNode?
-    var previousSibling: HyperNode?
+    override var nodeType: String {
+        get {
+            return "HyperElement"
+        }
+    }
     var tagName: String? //a, p, title, hr, b, br, head, html, text
-    var textContent: String? //(set and get)
+
 }
 
 /**
@@ -69,7 +86,27 @@ public class HyperAttribute: HyperNode {
 *  HyperRequest handles the HTTP Requests
 */
 public class HyperRequest: HyperNode {
+    func open(method: String, url: String, async: Bool) { //uname: String, pswd: String 
+        
+    }
     
+    func send(query: String?) {
+        
+    }
+    
+    func abort() {
+        
+    }
+    
+    var onReadyStateChange: (() -> ())?
+    
+    var readyState = 0
+    
+    var responseJSON: JSON?
+    
+    var responseStatus = 200 //404 etc
+    
+    var statusText = "OK";// "Not Found"
 }
 
 
